@@ -49,6 +49,24 @@
     "type": "spinner"
   },
   {
+    "max": 10000,
+    "title": "Fade Fast Length (seconds)",
+    "category": "General",
+    "min": 0,
+    "setting": "default-fade-fast-length",
+    "value": 1.0,
+    "type": "spinner"
+  },
+  {
+    "max": 10000,
+    "title": "Fade Slow Length (seconds)",
+    "category": "General",
+    "min": 0,
+    "setting": "default-fade-slow-length",
+    "value": 3.0,
+    "type": "spinner"
+  },
+  {
     "max": 100,
     "title": "Volume",
     "category": "General",

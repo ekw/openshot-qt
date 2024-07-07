@@ -1975,15 +1975,15 @@ class TimelineView(updates.UpdateInterface, ViewClass):
             end_animation = end_of_clip
             if position == "Start of Clip" and action in [MenuFade.IN_FAST, MenuFade.OUT_FAST]:
                 start_animation = start_of_clip
-                end_animation = min(start_of_clip + (1.0 * fps_float), end_of_clip)
+                end_animation = min(start_of_clip + (get_app().get_settings().get("default-fade-fast-length") * fps_float), end_of_clip)
             elif position == "Start of Clip" and action in [MenuFade.IN_SLOW, MenuFade.OUT_SLOW]:
                 start_animation = start_of_clip
-                end_animation = min(start_of_clip + (3.0 * fps_float), end_of_clip)
+                end_animation = min(start_of_clip + (get_app().get_settings().get("default-fade-slow-length") * fps_float), end_of_clip)
             elif position == "End of Clip" and action in [MenuFade.IN_FAST, MenuFade.OUT_FAST]:
-                start_animation = max(1.0, end_of_clip - (1.0 * fps_float))
+                start_animation = max(1.0, end_of_clip - (get_app().get_settings().get("default-fade-fast-length") * fps_float))
                 end_animation = end_of_clip
             elif position == "End of Clip" and action in [MenuFade.IN_SLOW, MenuFade.OUT_SLOW]:
-                start_animation = max(1.0, end_of_clip - (3.0 * fps_float))
+                start_animation = max(1.0, end_of_clip - (get_app().get_settings().get("default-fade-slow-length") * fps_float))
                 end_animation = end_of_clip
 
             # Fade in and out (special case)
